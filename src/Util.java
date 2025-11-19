@@ -97,6 +97,10 @@ public class Util {
     }
 
     public void maximumNumber(){
+
+        //Using streams
+        //int max = Arrays.stream(numberGenerator).max().getAsInt();
+
         int max = numberGenerator[0];
         for(int num : numberGenerator){
             if(num > max){
@@ -107,6 +111,10 @@ public class Util {
     }
 
     public void minimumNumber(){
+
+        //Using streams
+        //int min = Arrays.stream(numberGenerator).min().getAsInt();
+
         int min = numberGenerator[0];
         for(int num : numberGenerator){
             if(num < min){
