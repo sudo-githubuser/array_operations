@@ -76,6 +76,23 @@ public class Util {
         System.out.println("Total number of duplicates are: " + count);
     }
 
+    public void duplicateNumbersDetailed(){
+        Arrays.sort(numberGenerator);
+
+        for(int i = 0; i < numberGenerator.length - 1; i++){
+            if(numberGenerator[i] == numberGenerator[i + 1]){
+                int value = numberGenerator[i];
+                int count = 1;
+
+                while(i < numberGenerator.length - 1 && numberGenerator[i] == numberGenerator[i + 1]){
+                    count++;
+                    i++;
+                }
+                System.out.println(value + " appears " + count + " times");
+            }
+        }
+    }
+
     public void frequencyOfEachNumber(){
 
         HashMap<Integer, Integer> freqFinder = new HashMap<>();
@@ -93,7 +110,7 @@ public class Util {
 //            }
 //            freqFinder.put(numberGenerator[i], count);
 //        }
-        System.out.println(freqFinder);
+        freqFinder.forEach((k ,v) -> System.out.println(k + " appears " + v + " times"));
     }
 
     public void maximumNumber(){
@@ -122,5 +139,28 @@ public class Util {
             }
         }
         System.out.println("Minimum number is: " + min);
+    }
+
+    public void binarySearch(int target){
+        Arrays.sort(numberGenerator);
+
+        int left = 0;
+        int right = numberGenerator.length - 1;
+
+        while(left <= right){
+            int mid = (left + right) / 2;
+
+            if(numberGenerator[mid] == target){
+                System.out.println(target + " found at index: " + mid);
+                return;
+            }
+            else if(numberGenerator[mid] < target){
+                left = mid + 1;
+            }
+            else{
+                right = mid - 1;
+            }
+        }
+        System.out.println(target + " not found in array");
     }
 }

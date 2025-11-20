@@ -19,6 +19,9 @@ public class Main {
         System.out.println("\n---------------------Duplicate numbers in array---------------------\n");
         util.duplicateNumbers();
 
+        System.out.println("\n---------------------Duplicate numbers detailed in array---------------------\n");
+        util.duplicateNumbersDetailed();
+
         System.out.println("\n---------------------Frequency of each numbers in array---------------------\n");
         util.frequencyOfEachNumber();
 
@@ -27,6 +30,9 @@ public class Main {
 
         System.out.println("\n---------------------Minimum number in array---------------------\n");
         util.minimumNumber();
+
+        System.out.println("\n---------------------Search a number in array---------------------\n");
+        util.binarySearch(82);
 
     }
 }
